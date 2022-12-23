@@ -43,6 +43,9 @@ function onDataReceived(text) {
   else if (text === "help\n") {
     help();
   }
+  else if (text.startsWith("add")) {
+    add (text)
+  }
   else if (text === "list\n"){
     list()
   }
@@ -99,6 +102,15 @@ const tasksArray = ['task1' , 'task2' ,'task3'];
 function list (key){
 let li= tasksArray.map((task,key)=> `${key+1} - ${task}`).join(`\n`)
 console.log(li);
+}
+function add (some){
+if (some =="add\n") {
+  console.log("error")
+}
+else {
+ let newtask = some.trim().split(" ")[1]
+ tasksArray.push(newtask)
+}
 }
 
 // The following line starts the application
