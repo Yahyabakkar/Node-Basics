@@ -53,6 +53,9 @@ function onDataReceived(text) {
   } else if(text.startsWith('remove ')){
     remove(text.slice(6, text.length-1))
   }
+  else if(text.startsWith("edit")){
+    edit(text)
+  }
   else {
     unknownCommand(text);
   }
@@ -131,6 +134,21 @@ console.log("doesn't exist")
   else{
     console.log('error!!!!!')
   }
+}
+function edit (one)  {
+  if (one =="edit\n") {
+    console.log("error")
+}
+else {
+  let ones=one.split(" ")[1]
+  if(!parseInt(ones)){
+    tasksArray[tasksArray.length-1]=one.trim().replace("edit ","")
+  }
+  else{
+    tasksArray[ones-1]=one.trim().replace(`edit ${ones}`,'')
+  }
+}
+
 }
 // The following line starts the application
 startApp("yahya");

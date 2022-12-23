@@ -126,7 +126,7 @@ We're going to add three functions: `add`, `remove`, and `list`.
 8. commit ("documented list, add, remove"). Congrats! You're close to a full CRUD app!
 
 If you haven't yet, now would be a good moment to push
-
+  
 ## Step 5: Refinements
 
 *note*: commits. Each step is a commit.
