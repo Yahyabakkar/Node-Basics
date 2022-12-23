@@ -124,7 +124,11 @@ function remove(number){
     tasksArray.pop()
   } else if(index>=1 && index<=tasksArray.length){
     tasksArray.splice(index-1, 1)
-  } else{
+  } 
+  else if (index>tasksArray.length) {
+console.log("doesn't exist")
+  }
+  else{
     console.log('error!!!!!')
   }
 }
