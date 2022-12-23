@@ -87,7 +87,7 @@ function exit() {
 *@returns {void}  
 */
 function help (){
-  console.log('hello\n  quit or exit\n   help\n ')
+  console.log('hello\n  quit or exit\n   help\n   hello world return hello world!\n ')
 
 }
 
