@@ -48,6 +48,10 @@ function onDataReceived(text) {
   }
   else if (text === "list\n"){
     list()
+  } else if(text==='remove\n'){
+    tasksArray.pop()
+  } else if(text.startsWith('remove ')){
+    remove(text.slice(6, text.length-1))
   }
   else {
     unknownCommand(text);
@@ -113,6 +117,17 @@ else {
 }
 }
 
+function remove(number){
+  number=number.trim()
+  let index=parseInt(number);
+  if(!index && number!='0'){
+    tasksArray.pop()
+  } else if(index>=1 && index<=tasksArray.length){
+    tasksArray.splice(index-1, 1)
+  } else{
+    console.log('error!!!!!')
+  }
+}
 // The following line starts the application
 startApp("yahya");
 
