@@ -83,7 +83,7 @@ function exit() {
 }
 
 /**
-*this function prints the comands with the description 
+*This function prints the comands with the description 
 *@returns {void}  
 */
 function help (){
