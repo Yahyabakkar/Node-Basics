@@ -64,7 +64,7 @@ function unknownCommand(c) {
  * @returns {void}
  */
 function hello(h) {
-  console.log(h.trim()+"!");
+  console.log(h.trim ()+"!");
 }
 
 
