@@ -32,12 +32,13 @@ function startApp(name) {
  * @returns {void}
  */
 function onDataReceived(text) {
+  
   if (text === "quit\n") {
     quit();
   } else if (text === "exit\n") {
     exit();
-  } else if (text === "hello\n") {
-    hello();
+  } else if (text.startsWith("hello")) {
+    hello(text);
   }
   else if (text === "help\n") {
     help();
@@ -50,7 +51,6 @@ function onDataReceived(text) {
 /**
  * prints "unknown command"
  * This function is supposed to run when all other commands have failed
- *
  * @param  {string} c the text received
  * @returns {void}
  */
@@ -60,17 +60,16 @@ function unknownCommand(c) {
 
 /**
  * Says hello
- *
+ * @param {string} h
  * @returns {void}
  */
-function hello() {
-  console.log("hello!");
+function hello(h) {
+  console.log(h.trim()+"!");
 }
 
 
 /**
  * Exits the application
- *
  * @returns {void}
  */
 function quit() {
@@ -78,7 +77,7 @@ function quit() {
   process.exit();
 }
 function exit() {
-  console.log("exit the app");
+  console.log("goodbye");
   process.exit();
 }
 
