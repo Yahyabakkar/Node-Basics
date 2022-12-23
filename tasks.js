@@ -104,7 +104,7 @@ function help (){
 
 }
 
-const tasksArray = ['task1' , 'task2' ,'task3'];
+const tasksArray = ['[✓]task1' , 'task2' ,'[✓]task3'];
 
 function list (key){
 let li= tasksArray.map((task,key)=> `${key+1} - ${task}`).join(`\n`)
