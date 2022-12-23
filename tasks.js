@@ -65,6 +65,7 @@ function unknownCommand(c) {
  */
 function hello(h) {
   console.log(h.trim ()+"!");
+em
 }
 
 
