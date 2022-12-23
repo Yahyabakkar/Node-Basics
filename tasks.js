@@ -48,7 +48,8 @@ function onDataReceived(text) {
   }
   else if (text === "list\n"){
     list()
-  } else if(text==='remove\n'){
+  } 
+  else if(text==='remove\n'){
     tasksArray.pop()
   } else if(text.startsWith('remove ')){
     remove(text.slice(6, text.length-1))
@@ -56,6 +57,12 @@ function onDataReceived(text) {
   else if(text.startsWith("edit")){
     edit(text)
   }
+  else if (text.startsWith("check")) {
+    check(text);}
+    else if (text.startsWith("uncheck")) {
+      uncheck(text);
+    }
+  
   else {
     unknownCommand(text);
   }
@@ -104,7 +111,7 @@ function help (){
 
 }
 
-const tasksArray = ['[✓]task1' , 'task2' ,'[✓]task3'];
+const tasksArray = ['[ ]task1' , '[ ]task2' ,'[ ]task3'];
 
 function list (key){
 let li= tasksArray.map((task,key)=> `${key+1} - ${task}`).join(`\n`)
@@ -131,6 +138,8 @@ function remove(number){
   else if (index>tasksArray.length) {
 console.log("doesn't exist")
   }
+  
+
   else{
     console.log('error!!!!!')
   }
@@ -148,7 +157,29 @@ else {
     tasksArray[ones-1]=one.trim().replace(`edit ${ones}`,'')
   }
 }
+}
+function check(arg) {
+  const myArray = arg.split(" ");
+  if (arg == "check") {
+    console.log('error commend not found')
+  }
+  else {
+    let pos = myArray[1] - 1;
+    let oldItem = (tasksArray[myArray[1] - 1]).substring(3);
+    tasksArray.splice(pos, 1, '[✓]' + oldItem);
 
+}
+}
+function uncheck(arg) {
+  const myArray = arg.split(" ");
+  if (arg == "uncheck") {
+    console.log('error commend not found')
+  }
+  else {
+    let pos = myArray[1] - 1;
+    let oldItem = (tasksArray[myArray[1] - 1]).substring(3);
+    tasksArray.splice(pos, 1, '[ ]' + oldItem);
+  }
 }
 // The following line starts the application
 startApp("yahya");
