@@ -43,6 +43,9 @@ function onDataReceived(text) {
   else if (text === "help\n") {
     help();
   }
+  else if (text === "list\n"){
+    list()
+  }
   else {
     unknownCommand(text);
   }
@@ -91,6 +94,12 @@ function help (){
 
 }
 
+const tasksArray = ['task1' , 'task2' ,'task3'];
+
+function list (key){
+let li= tasksArray.map((task,key)=> `${key+1} - ${task}`).join(`\n`)
+console.log(li);
+}
 
 // The following line starts the application
 startApp("yahya");
